@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import SwaggerUI from "swagger-ui-react"
+import "swagger-ui-react/swagger-ui.css"
+
 
 export default class Login extends Component{
     constructor(props: any){
@@ -7,8 +10,7 @@ export default class Login extends Component{
     }
     render(){
         return (
-            
-        <h1>登录页面</h1>
+            <SwaggerUI url="https://petstore.swagger.io/v2/swagger.json" />
         )
     }
 }
