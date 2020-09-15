@@ -3,7 +3,12 @@ import swaggerDataBase from './swaggerDataBase'
 
 // const token = Store.getState().getIn(['user', 'token'])
 // let Authorization = 'Bearer ' + token
+<<<<<<< HEAD
 
+=======
+let _id = 0;
+let Authorization = 'Bearer ' + _id++;
+>>>>>>> feat: eslint,router finished
 //安全配置和备份管理
 let security = {
   //备份管理--分页查找

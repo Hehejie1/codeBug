@@ -7,6 +7,7 @@
       "esnext"
     ],
     "allowJs": true,
+<<<<<<< HEAD
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -24,4 +25,38 @@
   "include": [
     "src"
   ]
+=======
+    "jsx": "react",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "rootDir": "src",
+    "outDir": "build",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "rootDirs": [],
+    "typeRoots": [],
+    "types": [],
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": []
+>>>>>>> feat: eslint,router finished
 }

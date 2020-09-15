@@ -2,6 +2,10 @@
   "name": "code-bug-log",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
+=======
+  "homepage": "./",
+>>>>>>> feat: eslint,router finished
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -21,6 +25,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-swagger": "^1.0.13",
+<<<<<<< HEAD
+=======
+    "redux": "^4.0.5",
+>>>>>>> feat: eslint,router finished
     "swagger-ui-react": "^3.33.0"
   },
   "scripts": {
@@ -49,10 +57,20 @@
     "@typescript-eslint/parser": "^4.1.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
+<<<<<<< HEAD
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.2",
+=======
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "prettier": "^2.1.1",
+>>>>>>> feat: eslint,router finished
     "typescript": "^3.9.7"
   }
 }

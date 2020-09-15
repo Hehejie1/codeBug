@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+<<<<<<< HEAD
 const isDev = process.env.NODE_ENV === 'development';
 
 let host = ''
@@ -8,13 +9,31 @@ if (isDev) {
   var str = axios.defaults.baseURL
   var reg = /http(s)?:\/\/([A-Za-z0123456789:\.]+)\/\S+/;
   var result = reg.exec(str);
+=======
+// eslint-disable-next-line
+const isDev = process.env.NODE_ENV === 'development';
+type URL = string | undefined
+let host = ''
+
+
+if (isDev) {
+  let str: URL = axios.defaults.baseURL || ""
+  let reg = /http(s)?:\/\/([A-Za-z0123456789:.]+)\/\S+/;
+  let result = reg.exec(str);
+>>>>>>> feat: eslint,router finished
   if (result) {
     host = result[2]
   }
 } else {
+<<<<<<< HEAD
   var str = window.location.href
   var reg = /http(s)?:\/\/([A-Za-z0123456789:\.]+)\/\S+/;
   var result = reg.exec(str);
+=======
+  let str: URL = window.location.href || ""
+  let reg = /http(s)?:\/\/([A-Za-z0123456789:.]+)\/\S+/;
+  let result = reg.exec(str);
+>>>>>>> feat: eslint,router finished
   if (result) {
     host = result[2]
   }
