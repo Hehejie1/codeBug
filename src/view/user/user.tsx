@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React, {Component} from 'react';
 
 export default class User extends Component{
-=======
-import * as React from 'react';
-
-export default class User extends React.Component{
->>>>>>> feat: eslint,router finished
     constructor(props: any){
         super(props);
         this.state = {
