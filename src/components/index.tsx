@@ -1,6 +1,10 @@
 
-import Three from "./common/webGL/three"
+
+import WebGL from "./common/webGL/index"
 
 
 
-export default Three
+
+export default {
+    WebGL
+}

@@ -8,7 +8,7 @@ export default class Login extends Component{
     }
     render(){
         return (
-            <h1>商铺也</h1>
+            <h1>登陆页面</h1>
         )
     }
 }

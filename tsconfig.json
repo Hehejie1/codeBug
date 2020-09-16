@@ -12,16 +12,17 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
     "rootDir": "src",
-    "outDir": "build"
+    "outDir": "./dist/",
+    "module": "commonjs",
+    "sourceMap": true
   },
   "include": [
-    "src"
+    "./src/**/*"
   ]
 }
