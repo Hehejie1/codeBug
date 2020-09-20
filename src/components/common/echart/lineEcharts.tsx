@@ -1,112 +1,98 @@
 import React from 'react';
-import echarts from 'echarts/lib/echarts';
-import 'echarts/lib/chart/bar';
-import 'echarts/lib/chart/line';
-import 'echarts/lib/component/tooltip';
-import 'echarts/lib/component/title';
-import 'echarts/lib/component/legend';
-import 'echarts/lib/component/toolbox';
-import 'echarts/lib/component/markPoint';
-import 'echarts/lib/component/markLine';
+import Chart from './core'
 
-
-interface IProps{
-    
-}
-interface IState{
-    xdata : string[],
-    ydata : any
-}
-
-class LineEcharts extends React.Component<IProps, IState> {
-    constructor(props: IProps){
-        super(props)
-        this.state = {
-            xdata: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
-            ydata: {
-                ydata1:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
-                ydata2:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
-            }
+const chartEmpty = {
+    title: {
+        text: '折线图堆叠'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
         }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
+        {
+            name: '邮件营销',
+            type: 'line',
+            stack: '总量',
+            data: [120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            name: '联盟广告',
+            type: 'line',
+            stack: '总量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            name: '视频广告',
+            type: 'line',
+            stack: '总量',
+            data: [150, 232, 201, 154, 190, 330, 410]
+        },
+        {
+            name: '直接访问',
+            type: 'line',
+            stack: '总量',
+            data: [320, 332, 301, 334, 390, 330, 320]
+        },
+        {
+            name: '搜索引擎',
+            type: 'line',
+            stack: '总量',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+        }
+    ]
+};
+
+export const LineEcharts = ():React.ReactElement => {
+    let [chart1Data, setChart1Data] = React.useState(null);
+
+    // 防护监控数据 实例
+    let [chart1] = [null];
+
+    function updateChart(): void{
+        let opts: null;
+        opts = JSON.parse(JSON.stringify(chartEmpty));
+        setChart1Data(opts);
     }
-    componentDidMount() {
-    // 初始化
-    // var myChart = echarts.init();
-    // 绘制图表
-    /*
-    myChart.setOption({
-        title: { text: '某地区蒸发量和降水量' },
-        tooltip : {
-          trigger: 'axis'
-      },
-      legend: {
-          data:['蒸发量','降水量']
-      },
-      toolbox: {
-          show : true,
-          feature : {
-              dataView : {show: true, readOnly: false},
-              magicType : {show: true, type: ['line', 'bar']},
-              restore : {show: true},
-              saveAsImage : {
-                show: true,
-                type: 'jpg'
-              }
-          }
-      },
-        xAxis : [
-          {
-              type : 'category',
-              data : this.state.xdata
-          }
-      ],
-      yAxis : [
-          {
-              type : 'value'
-          }
-      ],
-        series : [
-          {
-              name:'蒸发量',
-              type:'bar',
-              data: this.state.ydata.ydata1,
-              markPoint : {
-                  data : [
-                      {type : 'max', name: '最大值'},
-                      {type : 'min', name: '最小值'}
-                  ]
-              },
-              markLine : {
-                  data : [
-                      {type : 'average', name: '平均值'}
-                  ]
-              }
-          },
-          {
-              name:'降水量',
-              type:'bar',
-              data: this.state.ydata.ydata2,
-              markPoint : {
-                  data : [
-                    {type : 'max', name: '最大值'},
-                    {type : 'min', name: '最小值'}
-                  ]
-              },
-              markLine : {
-                  data : [
-                      {type : 'average', name : '平均值'}
-                  ]
-              }
-          },
-      ]
-    });
-    */
-}
-render() {
+
+    // 获取图表实例，添加自定义图表事件
+    React.useEffect((): void => {
+        console.log("chart1", chart1);
+        updateChart();
+    }, [chart1]);
+
     return (
-        <div id="main" style={{ width: '100%', height: 500 }}></div>
+        <div>
+            <Chart 
+                key="chart1"
+                className="chart1"
+                option={chart1Data}
+                onRender={(e): void => {chart1 = e}}
+                style={{width: '100%', height: '400px'}}
+                />
+        </div>
     );
 }
-}
 
-export default LineEcharts;
+
