@@ -1,0 +1,23 @@
+.hh-my{
+    .hh-close{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .hh-avatar{
+        .hh-avatar-gl{
+            width: 150px;
+            height: 150px;
+            border: 1px solid #feaaad;
+        }
+        .hh-avatar-info{
+            text-align: center;
+            span{
+                margin-right: 10px;
+            }
+        }
+    }
+    .hh-options{
+        
+    }
+}
