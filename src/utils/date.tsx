@@ -41,6 +41,24 @@ export const momment =  (fmt: string, timestamp?: any):string => {
     return fmt;
 }
 
+// 获取标准时间
+export const getTime =  (time?: Date):string => {
+    let _data = new Date();
+    let _o: any = {
+        "Y": _data.getFullYear(),
+        "M": _data.getMonth() + 1,
+        "q": Math.floor((_data.getMonth() + 3) / 3),
+        "d": _data.getDate(),
+        "D": _data.getDay(),
+        "h": _data.getHours(),
+        "m": _data.getMinutes(),
+        "s": _data.getSeconds(),
+        "S": _data.getMilliseconds(),
+    }
+    return _o;
+}
+
+
 /**
  * 日期字符转为时间戳
  */

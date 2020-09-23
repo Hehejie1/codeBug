@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import { SettingOutlined, HighlightOutlined, CloseCircleOutlined, QuestionCircleOutlined, ImportOutlined, RightOutlined } from '@ant-design/icons';
 import "./index.scss"
+import * as THREE from "three"
+
+
 
 interface IProps{
 
@@ -16,15 +19,42 @@ export default class Index extends Component<IProps, IState>{
         this.state = {
             msg : '我的'
         }
+        this.init();
+    }
+    init(){
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer({
+            antialias: true
+        });
+        renderer.setSize(150, 150);
+        document.getElementById("react-gl-avatar")?.appendChild(renderer.domElement);
+        renderer.setClearColor(0xFFFFFF, 1.0)
+        
+        var geometry = new THREE.Geometry();
+        var material = new THREE.LineBasicMaterial( { vertexColors: true } );
+        var color1 = new THREE.Color( 0x444444 ), color2 = new THREE.Color( 0xFF0000 );
+
+        // 线的材质可以由2点的颜色决定
+        var p1 = new THREE.Vector3( -100, 0, 100 );
+        var p2 = new THREE.Vector3(  100, 0, -100 );
+        geometry.vertices.push(p1);
+        geometry.vertices.push(p2);
+        geometry.colors.push( color1, color2 );
+
+        var line = new THREE.LineSegments( geometry, material );
+        scene.add(line);
+        console.log(scene);
+        
     }
     render(){
         return (
             <div className="hh-my">
                 <section>
-                    <CloseCircleOutlined className="hh-close" />
+                    <a href="/index"  className="hh-close"> <CloseCircleOutlined /></a>
                 </section>
                 <section className="hh-avatar">
-                    <div className="hh-avatar-gl">3D用户头像</div>
+                    <div id="react-gl-avatar" className="hh-avatar-gl"></div>
                     <div className="hh-avatar-info">
                         <span>呵呵杰</span>
                         <span>水瓶座</span>

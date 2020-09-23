@@ -3,6 +3,7 @@ import "./index.scss"
 import { momment } from '../../utils/date'
 import avatarImg from '../../assert/images/user_one.jpg'
 import { MessageOutlined } from '@ant-design/icons';
+import { Clock } from "../../components/index"
 import { Badge } from 'antd';
 
 interface IProps{
@@ -42,13 +43,20 @@ export default class Index extends Component<IProps, IState>{
                         呵呵杰
                     </a>
                     <a href="/message" className="hh-message">
-                        <Badge count={5}>
-                            <MessageOutlined />
-                        </Badge>
+                        <MessageOutlined />
                     </a>
                 </header>
                 <section>
-                    <div className="hh-clock">时钟</div>
+                    <Clock
+                        id="hh-index-clock"
+                        className="hh-clock" 
+                        style={{
+                            display: "block",
+                            width: "50%",
+                            height: "50%",
+                            margin: "10px auto",
+                        }} 
+                    />
                     <p>距离死亡还有：{this.state.date}</p>
                 </section>
                 <section>
