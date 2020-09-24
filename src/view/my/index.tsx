@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { SettingOutlined, HighlightOutlined, CloseCircleOutlined, QuestionCircleOutlined, ImportOutlined, RightOutlined } from '@ant-design/icons';
 import "./index.scss"
 import * as THREE from "three"
-
+import avatarImg from '../../assert/images/user_one.jpg'
 
 
 interface IProps{
@@ -51,10 +51,12 @@ export default class Index extends Component<IProps, IState>{
         return (
             <div className="hh-my">
                 <section>
-                    <a href="/index"  className="hh-close"> <CloseCircleOutlined /></a>
+                    <a href="/index"  className="hh-close"> <CloseCircleOutlined className="f16" /></a>
                 </section>
                 <section className="hh-avatar">
-                    <div id="react-gl-avatar" className="hh-avatar-gl"></div>
+                    <div id="react-gl-avatar" className="hh-avatar-gl">
+                        <img src={avatarImg} />
+                    </div>
                     <div className="hh-avatar-info">
                         <span>呵呵杰</span>
                         <span>水瓶座</span>

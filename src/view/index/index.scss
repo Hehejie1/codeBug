@@ -34,6 +34,30 @@
             color: #Fff;
         }
     }
+
+    section{
+        text-align: center;
+        .hh-btn-add{
+            width: 40%;
+            text-align: center;
+            display: inline-block;
+            color: #fff;
+            background-color: #409eff;
+            border-color: #409eff;
+            white-space: nowrap;
+            cursor: pointer;
+            -webkit-appearance: none;
+            text-align: center;
+            box-sizing: border-box;
+            outline: none;
+            margin: 10px;
+            transition: .1s;
+            font-weight: 500;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+    }
 }
 @media screen and (max-width: 786){
     .hh-index{

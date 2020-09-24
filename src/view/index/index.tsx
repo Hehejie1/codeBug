@@ -57,14 +57,14 @@ export default class Index extends Component<IProps, IState>{
                             margin: "10px auto",
                         }} 
                     />
-                    <p>距离死亡还有：{this.state.date}</p>
+                    <p style={{textAlign: "center"}}>距离死亡还有：{this.state.date}</p>
                 </section>
-                <section>
+                {/* <section>
                     用户完成任务的要求
-                </section>
+                </section> */}
                 <section>
-                    <a href="user/dare" className="hh-btn">创建计划</a>
-                    <a href="user/dare" className="hh-btn">开始挑战</a>
+                    <a href="/my/todo" className="hh-btn-add">创建计划</a>
+                    <a href="/user/dare" className="hh-btn-add">开始挑战</a>
                 </section>
             </div>  
         )

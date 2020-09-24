@@ -98,7 +98,7 @@ export default class Clock extends React.Component<IProps, IState> {
     ctx.beginPath();
     ctx.lineWidth = 1;
     ctx.moveTo(canvas.width / 2, canvas.height / 2);
-    ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin(_date.s * Math.PI / -30) * 2 / 5, canvas.width / 2 + canvas.width * Math.cos(_date.s * Math.PI / -30) * 2 / 5);
+    ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin(_date.s * Math.PI / -60) * 2 / 5, canvas.width / 2 + canvas.width * Math.cos(_date.s * Math.PI / -60) * 2 / 5);
     ctx.stroke();
     ctx.closePath();
   }
