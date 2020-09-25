@@ -22,6 +22,7 @@ export default class Index extends Component<IProps, IState>{
             date: '',
             timer: null
         }
+        console.log(this.props);
     }
     componentWillMount() {
         let _date = ''; 
