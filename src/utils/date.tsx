@@ -28,7 +28,7 @@ export const momment =  (fmt: string, timestamp?: any):string => {
         "m+": _data.getMinutes(),
         "s+": _data.getSeconds(),
         "q+": Math.floor((_data.getMonth() + 3) / 3),
-        "S+": _data.getMilliseconds(),
+        "S+": String(_data.getMilliseconds()).padStart(3,'0'),
     }
     if (/(y+)/.test(fmt)){
         fmt = fmt.replace(RegExp.$1, (_data.getFullYear() + "").substr(4 - RegExp.$1.length));

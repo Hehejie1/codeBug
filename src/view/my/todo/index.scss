@@ -1,0 +1,53 @@
+.hh-todo{
+    width: 100%;
+    .hh-todo-nav{
+        position: relative;
+        width: 100%;
+        height: 20vh;
+        background: url('../../../assert/images/todo.jpg')no-repeat;
+        background-size: cover;
+        span{
+            color: #fff;
+            font-size: 20px;
+            line-height: 20vh;
+        }
+        .hh-icon-calendar{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            line-height: 1;
+            font-size: 18px;
+        }
+    }
+    .hh-form{
+        padding: 10px;
+        .hh-form-item{
+            width: 100%;
+            margin-top: 8px;
+            &.hh-todo-head{
+                display: grid;
+                grid-template-columns: 30% 30% 40%;
+                grid-column-gap: 5px;
+                font-size: 12px;
+            }
+            &.hh-todo-item{
+                display: grid;
+                grid-template-columns: 58% 20% 20%;
+                grid-column-gap: 5px;
+            }
+            &.hh-todo-add{
+                padding: 20px 0;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            input{
+                height: auto;
+            }
+            .hh-textarea{
+                width: 100%;
+                padding: 5px;
+                min-height: 12vh;
+            }
+        }
+    }
+}

@@ -11,8 +11,6 @@ interface IState{
     msg: string
 }
 
-
-
 export default class Index extends Component<IProps, IState>{
     constructor(props: any){
         super(props);
