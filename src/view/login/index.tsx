@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Brrage } from "../../components/index"
+import { WordCloud } from "../../components/common/echart/WordCloud"
 import { NavLink } from "react-router-dom"
 import "./index.scss"
 
@@ -25,12 +25,8 @@ export default class Login extends Component{
     render(){
         return (
             <div className="hh-login">
-                <div className="landscape"></div>
-                <div>
-                    蹦出很多话
-                    <Brrage barrageList={list} color={colorConfig} />
-                </div>
-                <div className="hh-box">
+                <WordCloud />
+                <div className="hh-form">
                     <NavLink
                         to="/index"
                         className="hh-btn"
@@ -44,7 +40,7 @@ export default class Login extends Component{
                     >
                         跳转主页面
                     </NavLink>
-                </div>                
+                </div>
             </div>
         )
     }

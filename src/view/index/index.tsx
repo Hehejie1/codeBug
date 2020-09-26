@@ -24,17 +24,16 @@ export default class Index extends Component<IProps, IState>{
         }
         console.log(this.props);
     }
-    componentWillMount() {
-        let _date = ''; 
-        let _timer = setInterval(() => {
-            _date = momment('hh:mm:ss S')
-            this.setState({
-                date: _date,
-                timer: _timer,
-            })
-        },1)
-    }
-
+    // componentWillMount() {
+    //     let _date = ''; 
+    //     let _timer = setInterval(() => {
+    //         _date = momment('hh:mm:ss S')
+    //         this.setState({
+    //             date: _date,
+    //             timer: _timer,
+    //         })
+    //     },1)
+    // }
     render(){
         return (
             <div className="hh-index">

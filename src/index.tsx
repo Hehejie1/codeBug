@@ -8,16 +8,7 @@ import { StarBg } from './components/index'
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <StarBg
-      id="hh-backgroun-star"
-      config="particles/config-1.json"
-      style={{
-        width: "100vw",
-        height: "100vh",
-        opacity: "0.5"
-      }}
-      className="hh-backgroun-star"
-    />  
+    <StarBg />
   </React.StrictMode>,
   document.getElementById('root')
 );

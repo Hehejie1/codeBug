@@ -6,5 +6,5 @@ export {
     WebGl,
     Brrage,
     StarBg,
-    Clock
+    Clock,
 }

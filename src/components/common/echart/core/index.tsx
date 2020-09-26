@@ -51,8 +51,8 @@ const Chart = (props: ChartProps): React.ReactElement => {
 
         // 大小自适应
         const resize = (): void => instance.resize();
-        window.removeEventListener("resize", resize);
-        window.addEventListener("resize", resize);
+        // window.removeEventListener("resize", resize);
+        // window.addEventListener("resize", resize);
 
         // 默认加载状态
         showLoading(instance);
@@ -69,7 +69,7 @@ const Chart = (props: ChartProps): React.ReactElement => {
         // 销毁并清除状态
         return (): void => {
             echarts.dispose(instance);
-            window.removeEventListener("resize", resize);
+            // window.removeEventListener("resize", resize);
         };
 
     }, [chartDom, props]);
