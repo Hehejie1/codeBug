@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom'
 import './index.scss';
 
 export interface TabsProps {
@@ -15,7 +14,6 @@ export interface TabsState {
  
 const Tab = (props: TabsProps) => {
     const [hash, setHash] = useState('')
-    const history = useHistory();
 
     useEffect(() => {
         setHash(window.location.pathname)

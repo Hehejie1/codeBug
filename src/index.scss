@@ -23,6 +23,39 @@ code {
   list-style: none;
 }
 
+input[type=number], input[type=password], input[type=text], textarea {
+  -webkit-appearance: none;
+}
+input {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  font-variant: tabular-nums;
+  list-style: none;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  color: rgba(0,0,0,.85);
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  overflow: visible;
+  &:focus {
+    border-color: #40a9ff;
+    border-right-width: 1px!important;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 2px rgba(24,144,255,.2);
+    box-shadow: 0 0 0 2px rgba(24,144,255,.2);
+  }
+}
+select{
+  @extend input;
+}
+input[textarea]{
+  @extend input;
+}
 .f16{
   font-size: 16px;
 }
