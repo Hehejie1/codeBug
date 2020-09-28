@@ -82,23 +82,26 @@ export default class Clock extends React.Component<IProps, IState> {
     // 12 * 3600 360
     
     ctx.beginPath();
+    ctx.strokeStyle="rgb(0,0,255)"
     ctx.lineWidth = 3;
     ctx.moveTo(canvas.width / 2, canvas.height / 2);
-    ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin((_date.h * 3600 + _date.m * 60 + _date.s) / 120) / 5, canvas.width / 2 + canvas.width * Math.sin((_date.h * 3600 + _date.m * 60 + _date.s) / 120) / 5);
+    ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin((_date.h * 3600 + _date.m * 60 + _date.s) * Math.PI / 120 / 180) / 5, canvas.width / 2 -canvas.width * Math.sin((_date.h * 3600 + _date.m * 60 + _date.s) * Math.PI / 120 / 180) / 5);
     ctx.stroke();
     ctx.closePath();
     // 分针
-    // ctx.beginPath();
-    // ctx.lineWidth = 2;
-    // ctx.moveTo(canvas.width / 2, canvas.height / 2);
-    // ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin((_date.m * 60 + _date.s) / 10) / 4, canvas.width / 2 + canvas.width * Math.sin((_date.m * 60 + _date.s) / 10) / 4);
-    // ctx.stroke();
-    // ctx.closePath();
+    ctx.beginPath();
+    ctx.strokeStyle="rgb(255,0,0)"
+    ctx.lineWidth = 2;
+    ctx.moveTo(canvas.width / 2, canvas.height / 2);
+    ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin((_date.m * 60 + _date.s)  * Math.PI / 180) / 4, canvas.width / 2 - canvas.width * Math.sin((_date.m * 60 + _date.s)  * Math.PI / 180) / 4);
+    ctx.stroke();
+    ctx.closePath();
     // 秒针
     ctx.beginPath();
+    ctx.strokeStyle="rgb(0,255,0)"
     ctx.lineWidth = 1;
     ctx.moveTo(canvas.width / 2, canvas.height / 2);
-    ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin(_date.s * Math.PI / -60) * 2 / 5, canvas.width / 2 + canvas.width * Math.cos(_date.s * Math.PI / -60) * 2 / 5);
+    ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin(_date.s * Math.PI / 30) * 2 / 5, canvas.width / 2 - canvas.width * Math.cos(_date.s * Math.PI / 30) * 2 / 5);
     ctx.stroke();
     ctx.closePath();
   }
