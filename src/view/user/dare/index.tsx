@@ -9,6 +9,18 @@ interface IState{
     msg: string
 }
 
+const firstChild = () => {
+
+    return (
+        <>
+            
+        </>
+    )
+}
+
+
+
+
 export default class Index extends Component<IProps, IState>{
     constructor(props: any){
         super(props);
@@ -19,7 +31,7 @@ export default class Index extends Component<IProps, IState>{
     render(){
         return (
             <div className="hh-dare">
-                <Drag></Drag>
+                <Drag firstChild={firstChild}></Drag>
             </div>
         )
     }
