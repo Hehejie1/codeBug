@@ -4,11 +4,13 @@ import StarBg from './common/canvas/background/StarBg'
 import Clock from './common/canvas/clock/Clock'
 
 import UserList from './common/module/UserList/index'
+import Drag from './common/module/Drag/index'
 
 export {
     WebGl,
     Brrage,
     StarBg,
     Clock,
-    UserList
+    UserList,
+    Drag,
 }

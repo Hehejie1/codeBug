@@ -1,0 +1,23 @@
+.hh-drag{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    .hh-drag-line{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        .line {
+            stroke: brown;
+            stroke-width: 2px;
+        }
+    }
+    .hh-drag-box{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: black;
+        cursor: pointer;
+        position: absolute;
+    }
+}

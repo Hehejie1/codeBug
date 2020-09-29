@@ -1,17 +1,13 @@
 import React, {Component} from 'react';
-
+import { Drag } from "../../../components/index"
 import "./index.scss"
-
 
 interface IProps{
 
 }
-
 interface IState{
     msg: string
 }
-
-
 
 export default class Index extends Component<IProps, IState>{
     constructor(props: any){
@@ -29,8 +25,7 @@ export default class Index extends Component<IProps, IState>{
                     <div>对手的任务</div>
                 </section>
                 <section>
-                    小球
-                    今日任务， 开始，结束
+                    <Drag></Drag>
                 </section>
             </div>
         )

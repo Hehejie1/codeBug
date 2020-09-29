@@ -1,0 +1,18 @@
+.hh-user{
+    .hh-user-nav{
+        padding: 20px 0 10px;
+        background-color: #409EFF;
+        display: grid;
+        grid-template-columns: 80% 20%;
+        .hh-user-search{
+            width: 100%;
+            padding: 0 10px;
+            .hh-form-ipt{
+                width: 100%;                
+            }
+        }
+        .hh-user-btn{
+            
+        }
+    }
+}

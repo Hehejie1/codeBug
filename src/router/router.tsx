@@ -35,7 +35,7 @@ import UserInfo from '../view/user/userInfo/index'
 const router = () => (
     <Router>
         <Switch>
-            <Route exact path="/" render={() => <Redirect to="/user/index" push />} />
+            <Route exact path="/" render={() => <Redirect to="/user/dare" push />} />
             <Route path="/login" component={Login}/>
             <Route path="/index" component={Index}/>
             <Route path="/message" component={Message}/>

@@ -3,6 +3,7 @@ import { Input, Drawer, Button } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
 import { UserList } from '../../components/index'
 const { Search } = Input;
+import "./index.scss"
 
 interface IProps{
 
@@ -47,17 +48,17 @@ export default class User extends Component<IProps, IState>{
     };
     render(){
         return (
-            <div className="hh-box">
-                <section>
-                    <div>
-                    <Search
-                        placeholder="input search text"
-                        onSearch={value => console.log(value)}
-                        style={{ width: 200 }}
-                    />
+            <div className="hh-user">
+                <section className="hh-user-nav">
+                    <div className="hh-user-search">
+                        <Search
+                            className="hh-form-ipt"
+                            placeholder="请输入对手的昵称"
+                            onSearch={value => console.log(value)}
+                        />
                     </div>
                     <div>
-                    <Button type="primary" onClick={this.showDrawer}>
+                    <Button className="hh-user-btn" type="dashed" onClick={this.showDrawer}>
                         Open
                     </Button>
                     <Drawer

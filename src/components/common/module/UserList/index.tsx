@@ -34,8 +34,8 @@ const UserList = (props: TabsProps) => {
                 <Avatar icon={<UserOutlined />} />
             </div>
             <div className="hh-content">
-                胜率：7521
-                星座： 天蝎座
+                <p>胜率：7521</p>
+                <p>星座： 天蝎座</p>
             </div>
             <div className="hh-list-btn">
                 <Button type="primary"> P K </Button>
