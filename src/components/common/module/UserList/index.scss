@@ -1,0 +1,20 @@
+.hh-UserList{
+    .hh-user-list-item{
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+        margin: 15px 0;
+        padding: 5px 0;
+        border-bottom: 1px solid #eee;
+        .hh-avatar{
+
+        }
+        .hh-content{
+            p{
+                margin: 0;
+            }
+        }
+        .hh-btn{
+            
+        }
+    }
+}
