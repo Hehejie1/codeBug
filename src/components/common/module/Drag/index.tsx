@@ -1,19 +1,23 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo, ReactNode } from 'react';
 import './index.scss';
 
-export interface DragProps {
 
+export interface DragProps {
+    firstChild: ReactNode
+    secondChild: ReactNode
 }
-const useDrag = (domRef: any, setPosition: any) => {
+const useDrag = (domRef: any, setPosition: any, parentRef: any) => {
     const mouseStart = useRef({x: 0,y: 0})
     const domStart = useRef({x: 0,y: 0})
 
-    
     useEffect(() => {
+        const originX = parentRef?.current?.getBoundingClientRect().x || 0
+        const originY = parentRef?.current?.getBoundingClientRect().y || 0
+
         const down = (e: any) => {
             const { x, y} = domRef.current.getBoundingClientRect();
             mouseStart.current = {x: e.x ,y: e.y}
-            domRef.current = {x , y};
+            domStart.current = {x , y};
             document.addEventListener("mousemove", move);
             document.addEventListener("mouseup", up);
         }
@@ -25,10 +29,12 @@ const useDrag = (domRef: any, setPosition: any) => {
     
         const move = (e: any) => {
             const { pageX, pageY, x, y} = e;
-            console.log(domRef);
             const { width, height } = domRef.current.getBoundingClientRect();
-            const _x = domStart.current.x + x - mouseStart.current.x;
-            const _y = domStart.current.y + y - mouseStart.current.y;
+            const _x = domStart.current.x - originX + x - mouseStart.current.x;
+            // const _x = domStart.current.x + x - mouseStart.current.x;
+            const _y = domStart.current.y - originY + y - mouseStart.current.y;
+            // const _y = domStart.current.y + y - mouseStart.current.y;
+
             setPosition({
                 x: _x + width / 2,
                 y: _y + height / 2,
@@ -36,11 +42,10 @@ const useDrag = (domRef: any, setPosition: any) => {
             domRef.current.style.left = _x + "px";
             domRef.current.style.top = _y + "px";
         }
-        console.log(domRef);
         const {x, y, width, height} = domRef.current.getBoundingClientRect();
         setPosition({
-            x: x + width / 2,
-            y: y + height / 2,
+            x: x - originX + width / 2,
+            y: y - originY + height / 2,
         });
         domRef.current.addEventListener("mousedown", down);
     },[])
@@ -50,12 +55,13 @@ const useDrag = (domRef: any, setPosition: any) => {
 const Drag = (props: DragProps) => {
     const startRef: any = useRef();
     const endRef: any = useRef();
+    const parentRef: any = useRef();
 
     const [startPosition, setStartPosition] = useState({x: 0, y: 0})
     const [endPosition, setEndPosition] = useState({x: 0, y: 0})
 
-    useDrag(startRef, setStartPosition)
-    useDrag(endRef, setEndPosition)
+    useDrag(startRef, setStartPosition, parentRef)
+    useDrag(endRef, setEndPosition, parentRef)
     const linePosition = useMemo(() => {
         return {
             x1: startPosition.x,
@@ -66,7 +72,7 @@ const Drag = (props: DragProps) => {
 
     }, [startPosition, endPosition])
     return (
-        <div className="hh-drag">
+        <div ref={parentRef} className="hh-drag">
             <svg className="hh-drag-line">
                 <line
                     className="line"
@@ -76,8 +82,8 @@ const Drag = (props: DragProps) => {
                     y2={linePosition.y2}
                 ></line>
             </svg> 
-            <div ref={startRef} className="hh-drag-box"></div>
-            <div ref={endRef} className="hh-drag-box"></div>
+            <div ref={startRef} className="hh-drag-box">{props.firstChild}</div>
+            <div ref={endRef} className="hh-drag-box">{props.secondChild}</div>
         </div>
     )
 }

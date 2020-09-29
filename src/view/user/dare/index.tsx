@@ -18,15 +18,8 @@ export default class Index extends Component<IProps, IState>{
     }
     render(){
         return (
-            <div>
-                <section>
-                    <div>用户头像，用户信息</div>
-                    <div>当前的时钟</div>
-                    <div>对手的任务</div>
-                </section>
-                <section>
-                    <Drag></Drag>
-                </section>
+            <div className="hh-dare">
+                <Drag></Drag>
             </div>
         )
     }
