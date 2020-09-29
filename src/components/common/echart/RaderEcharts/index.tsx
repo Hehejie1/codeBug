@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Chart from './core'
+import Chart from '../core'
 
 const chartEmpty = {
     title: {

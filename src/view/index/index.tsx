@@ -3,11 +3,10 @@ import "./index.scss"
 import { momment } from '../../utils/date'
 import avatarImg from '../../assert/images/user_one.jpg'
 import { MessageOutlined } from '@ant-design/icons';
-import { Clock } from "../../components/index"
+import Clock from "../../components/common/canvas/clock"
 import { Badge } from 'antd';
 
 interface IProps{
-
 }
 
 interface IState{

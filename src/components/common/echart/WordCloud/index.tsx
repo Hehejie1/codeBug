@@ -1,5 +1,5 @@
 import React from 'react';
-import Chart from './core'
+import Chart from '../core'
 require('echarts-wordcloud');
 import 'echarts-wordcloud/dist/echarts-wordcloud'
 const keywords = [{"name":"男神","value":2.64},
