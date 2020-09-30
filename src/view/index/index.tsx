@@ -5,6 +5,7 @@ import avatarImg from '../../assert/images/user_one.jpg'
 import { MessageOutlined } from '@ant-design/icons';
 import Clock from "../../components/common/canvas/clock"
 import { Badge } from 'antd';
+import { Link } from 'react-router-dom'
 
 interface IProps{
 }
@@ -31,19 +32,19 @@ export default class Index extends Component<IProps, IState>{
                 date: _date,
                 timer: _timer,
             })
-        },200)
+        },1)
     }
     render(){
         return (
             <div className="hh-index">
                 <header>
-                    <a href="/my" className="hh-avatar">
-                        <img src={avatarImg} alt="头像"/>
-                        呵呵杰
-                    </a>
-                    <a href="/message" className="hh-message">
-                        <MessageOutlined />
-                    </a>
+                <Link to="/my" className="hh-avatar" >
+                    <img src={avatarImg} alt="头像"/>
+                    呵呵杰
+                </Link>
+                <Link to="/message" className="hh-message" >
+                    <MessageOutlined />
+                </Link>
                 </header>
                 <section>
                     <Clock
@@ -62,8 +63,8 @@ export default class Index extends Component<IProps, IState>{
                     用户完成任务的要求
                 </section> */}
                 <section>
-                    <a href="/my/todo" className="hh-btn-add">创建计划</a>
-                    <a href="/user/dare" className="hh-btn-add">开始挑战</a>
+                    <Link to="/my/todo" className="hh-btn-add" >创建计划</Link>
+                    <Link to="/my/dare" className="hh-btn-add" >开始挑战</Link>
                 </section>
             </div>  
         )

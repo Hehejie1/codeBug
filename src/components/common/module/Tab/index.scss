@@ -1,5 +1,5 @@
 .hh-Tab{
-    position: fixed;
+    position: sticky;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -14,6 +14,11 @@
         &.on{
             color: #fff;
             background-color: rgb(62, 109, 211);
+        }
+        .hh-link{
+            display: block;
+            width: 100%;
+            height: 100%;
         }
     }
 }

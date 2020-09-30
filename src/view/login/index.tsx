@@ -21,7 +21,7 @@ interface IState{
     opacity: number,
 }
 
-export default class Login extends Component<IProps, IState>{
+class Login extends Component<IProps, IState>{
     constructor(props: IProps){
         super(props)
         this.state = {
@@ -76,3 +76,5 @@ export default class Login extends Component<IProps, IState>{
         )
     }
 }
+
+export default Login

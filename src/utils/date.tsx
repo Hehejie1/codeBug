@@ -42,22 +42,21 @@ export const momment =  (fmt: string, timestamp?: any):string => {
 }
 
 // 获取标准时间
-export const getTime =  (time?: Date):string => {
-    let _data = new Date();
+export const getTime = (time?: Date) => {
+    let _data = time || new Date();
     let _o: any = {
         "Y": _data.getFullYear(),
-        "M": _data.getMonth() + 1,
+        "M": String(_data.getMonth() + 1).padStart(2, '0'),
         "q": Math.floor((_data.getMonth() + 3) / 3),
         "d": _data.getDate(),
         "D": _data.getDay(),
-        "h": _data.getHours(),
-        "m": _data.getMinutes(),
-        "s": _data.getSeconds(),
-        "S": _data.getMilliseconds(),
+        "h": String(_data.getHours()).padStart(2, '0'),
+        "m": String(_data.getMinutes()).padStart(2, '0'),
+        "s": String(_data.getSeconds()).padStart(2, '0'),
+        "S": String(_data.getMilliseconds()).padStart(3, '0'),
     }
     return _o;
 }
-
 
 /**
  * 日期字符转为时间戳

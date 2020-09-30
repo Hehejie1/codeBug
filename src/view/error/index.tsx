@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 import "./index.scss"
 
 interface IProp{
@@ -69,7 +69,7 @@ export default class Index extends React.Component<IProp, IState>{
                     <div className="box__description-title">404错误！</div>
                     <div className="box__description-text">看来我们找不到你要找的那一页</div>
                     </div>
-                    <a href="/index" className="hh-btn">返回</a>
+                    <Link to="/index" className="hh-btn-add" >返回</Link>
                 </div>
             </div>
         )
