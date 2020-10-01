@@ -3,7 +3,7 @@ import { SettingOutlined, HighlightOutlined, CloseCircleOutlined, QuestionCircle
 import "./index.scss"
 // import * as THREE from "three"
 import avatarImg from '../../assert/images/user_one.jpg'
-
+import { Link } from 'react-router-dom'
 
 interface IProps{
 
@@ -47,7 +47,7 @@ export default class Index extends Component<IProps, IState>{
         return (
             <div className="hh-my">
                 <section>
-                    <a href="/index"  className="hh-close"> <CloseCircleOutlined className="f16" /></a>
+                    <Link to="/index" className="hh-btn-item" ><CloseCircleOutlined className="f16" /></Link>
                 </section>
                 <section className="hh-avatar">
                     <div id="react-gl-avatar" className="hh-avatar-gl">
@@ -60,10 +60,18 @@ export default class Index extends Component<IProps, IState>{
                 </section>
                 <section className="hh-options">
                     <ul className="hh-groups">
-                        <li className="hh-row"><a href="/my/setting" className="hh-btn-item"><SettingOutlined className="icon" />设置<RightOutlined className="fr" /></a></li>
-                        <li className="hh-row"><a href="/my/goal" className="hh-btn-item"><HighlightOutlined className="icon" />我的目标<RightOutlined className="fr" /></a></li>
-                        <li className="hh-row"><a href="/my/help" className="hh-btn-item"><QuestionCircleOutlined className="icon" />帮助<RightOutlined className="fr" /></a></li>
-                        <li className="hh-row"><a href="/login" className="hh-btn-item"><ImportOutlined className="icon" />退出<RightOutlined className="fr" /></a></li>
+                        <li className="hh-row">
+                            <Link to="/my/setting" className="hh-btn-item" ><SettingOutlined className="icon" />设置<RightOutlined className="fr" /></Link>
+                        </li>
+                        <li className="hh-row">
+                            <Link to="/my/goal" className="hh-btn-item" ><HighlightOutlined className="icon" />我的目标<RightOutlined className="fr" /></Link>
+                        </li>
+                        <li className="hh-row">
+                            <Link to="/my/help" className="hh-btn-item" ><QuestionCircleOutlined className="icon" />帮助<RightOutlined className="fr" /></Link>
+                        </li>
+                        <li className="hh-row">
+                            <Link to="/my/login" className="hh-btn-item" ><ImportOutlined className="icon" />退出<RightOutlined className="fr" /></Link>
+                        </li>
                     </ul>
                 </section>
             </div>

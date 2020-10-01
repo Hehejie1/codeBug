@@ -1,5 +1,6 @@
 .hh-todo{
     width: 100%;
+    min-height: 600px;
     .hh-todo-nav{
         position: relative;
         width: 100%;
@@ -12,7 +13,7 @@
             line-height: 20vh;
         }
         .hh-icon-calendar{
-            position: absolute;
+            position: fixed;
             right: 10px;
             top: 10px;
             line-height: 1;

@@ -4,6 +4,7 @@ import StarBg from './common/canvas/background/StarBg'
 
 import UserList from './common/module/UserList/index'
 import Drag from './common/module/Drag/index'
+import Conditional from './common/module/Conditional/index'
 
 export {
     WebGl,
@@ -11,4 +12,5 @@ export {
     StarBg,
     UserList,
     Drag,
+    Conditional
 }

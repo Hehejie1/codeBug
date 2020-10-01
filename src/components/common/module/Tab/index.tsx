@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import './index.scss';
 
 export interface TabsProps {
     option: {
         key: string,
         name: string,
-    }[]
+    }[],
 }
  
 export interface TabsState {
@@ -20,15 +21,17 @@ const Tab = (props: TabsProps) => {
     }, [window.location.pathname])
 
     const handleClick = (key: string) => {
-        window.location.assign(key)
+        // window.location.assign(key)
     }
 
     const TabPane = props.option.map((item: any, index: number) => (
         <div 
             className={item.key === hash ? "hh-tabpane on" : "hh-tabpane"} 
             key={item.key}
-            onClick={() => handleClick(item.key)}
-        >{item.name}</div>
+            // onClick={() => handleClick(item.key)}
+        >
+            <Link className="hh-link" to={item.key}>{item.name}</Link>
+        </div>
     ))
 
     return (

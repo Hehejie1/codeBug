@@ -60,32 +60,19 @@ export default class Clock extends React.Component<IProps, IState> {
     ctx.stroke();
     ctx.closePath();
     // 绘制文字
-    // ctx.beginPath();
-    // ctx.font="8px Arial"
-    // ctx.strokeStyle = "#fff";
-    // ctx.fillStyle = "#fff";
-    // ctx.fillText("距离死亡", 20, 20);
-    // ctx.closePath();
+    ctx.beginPath();
+    ctx.font="20px Arial"
+    ctx.strokeStyle = "#000";
+    ctx.lineWidth = 0.5;
+    ctx.strokeText(`${_date.h}:${_date.m}:${_date.s} ${_date.S}`, canvas.width / 6, canvas.height * 2 / 3);
+    ctx.closePath();
     // 绘制指针
     // 时针
-    // console.log(_date);
-    // D: 3
-    // M: 9
-    // S: 77
-    // Y: 2020
-    // d: 23
-    // h: 8
-    // m: 52
-    // q: 3
-    // s: 3
-    // 8 * 3600 + 52 * 60 + 3 = 31923
-    // 12 * 3600 360
-    
     ctx.beginPath();
     ctx.strokeStyle="rgb(0,0,255)"
     ctx.lineWidth = 3;
     ctx.moveTo(canvas.width / 2, canvas.height / 2);
-    ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin((_date.h * 3600 + _date.m * 60 + _date.s) * Math.PI / 120 / 180) / 5, canvas.width / 2 -canvas.width * Math.sin((_date.h * 3600 + _date.m * 60 + _date.s) * Math.PI / 120 / 180) / 5);
+    ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin(((_date.h % 12) / 6 + _date.m / 360 + _date.s / 180800) * Math.PI) * 3 / 10, canvas.width / 2 -canvas.width * Math.sin((_date.h / 6 + _date.m / 360 + _date.s / 180800) * Math.PI) * 3 / 10);
     ctx.stroke();
     ctx.closePath();
     // 分针
@@ -93,7 +80,7 @@ export default class Clock extends React.Component<IProps, IState> {
     ctx.strokeStyle="rgb(255,0,0)"
     ctx.lineWidth = 2;
     ctx.moveTo(canvas.width / 2, canvas.height / 2);
-    ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin((_date.m * 60 + _date.s)  * Math.PI / 180) / 4, canvas.width / 2 - canvas.width * Math.sin((_date.m * 60 + _date.s)  * Math.PI / 180) / 4);
+    ctx.lineTo(canvas.width / 2 + canvas.width * Math.sin((_date.m / 30 + _date.s / 1800)  * Math.PI) / 2, canvas.width / 2 - canvas.width * Math.sin((_date.m / 30 + _date.s / 1800)  * Math.PI) / 2);
     ctx.stroke();
     ctx.closePath();
     // 秒针
