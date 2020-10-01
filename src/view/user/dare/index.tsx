@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, ReactNode} from 'react';
 import { Drag } from "../../../components/index"
 import "./index.scss"
 
@@ -9,14 +9,25 @@ interface IState{
     msg: string
 }
 
-const firstChild = () => {
+const FirstChild: React.ReactNode = (
+    <>
+        <div>
+            个人头像
+        </div>
+        <div>
+            展开内容
+            <ul>
+                <li>我今天也要做什么</li>
+            </ul>
+        </div>
+    </>
+)
 
-    return (
-        <>
-            
-        </>
-    )
-}
+const SecondChild: React.ReactNode = (
+    <>
+        <div>你好</div>
+    </>
+)
 
 
 
@@ -31,7 +42,7 @@ export default class Index extends Component<IProps, IState>{
     render(){
         return (
             <div className="hh-dare">
-                <Drag firstChild={firstChild}></Drag>
+                <Drag firstChild={FirstChild} secondChild={SecondChild} initSate={{x1:10,x2:200,y1:10,y2:10}}></Drag>
             </div>
         )
     }

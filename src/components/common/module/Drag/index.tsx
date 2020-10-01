@@ -3,11 +3,20 @@ import './index.scss';
 
 
 export interface DragProps {
-    firstChild: ReactNode
-    secondChild: ReactNode
+    firstChild: React.ReactNode
+    secondChild: React.ReactNode
+    initSate?: {
+        x1: string | number
+        x2: string | number
+        y1: string | number
+        y2: string | number
+    }
 }
-const useDrag = (domRef: any, setPosition: any, parentRef: any) => {
-    const mouseStart = useRef({x: 0,y: 0})
+const useDrag = (domRef: any, setPosition: any, parentRef: any, initSate?: any) => {
+    const mouseStart = useRef({
+        x:  0,
+        y:  0
+    })
     const domStart = useRef({x: 0,y: 0})
 
     useEffect(() => {
