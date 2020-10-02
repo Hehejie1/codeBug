@@ -37,17 +37,16 @@ export default class Index extends Component<IProps, IState>{
     render(){
         return (
             <div className="hh-index">
-                <header>
-                <Link to="/my" className="hh-avatar" >
-                    <img src={avatarImg} alt="头像"/>
-                    呵呵杰
-                </Link>
-                <Badge count={5} offset={[-3,5]} className="hh-message" size="small">
-                    <Link to="/message" >
-                        <MessageOutlined />
+                <header className="hh-header">
+                    <Link to="/my" className="hh-avatar" >
+                        <img src={avatarImg} alt="头像"/>
+                        呵呵杰
                     </Link>
-                </Badge>
-                
+                    <Badge count={5} offset={[-3,5]} className="hh-message" size="small">
+                        <Link to="/message" >
+                            <MessageOutlined />
+                        </Link>
+                    </Badge>
                 </header>
                 <section>
                     <Clock
