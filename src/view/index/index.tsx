@@ -42,9 +42,12 @@ export default class Index extends Component<IProps, IState>{
                     <img src={avatarImg} alt="头像"/>
                     呵呵杰
                 </Link>
-                <Link to="/message" className="hh-message" >
-                    <MessageOutlined />
-                </Link>
+                <Badge count={5} offset={[-3,5]} className="hh-message" size="small">
+                    <Link to="/message" >
+                        <MessageOutlined />
+                    </Link>
+                </Badge>
+                
                 </header>
                 <section>
                     <Clock

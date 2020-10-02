@@ -10,7 +10,7 @@
         .hh-avatar{
             position: fixed;
             left: 15px;
-            top: 5px;
+            top: 10px;
             overflow: hidden;
             color: #000;
             vertical-align: middle;
@@ -27,11 +27,14 @@
         }
         .hh-message{
             @extend .hh-avatar;
+            overflow: inherit;
             right: 15px;
             left: auto;
             color: #000;
             font-size: 20px;
-            color: #Fff;
+            a{
+                color: #Fff;
+            }
         }
     }
 
