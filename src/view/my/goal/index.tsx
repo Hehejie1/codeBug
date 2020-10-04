@@ -52,12 +52,12 @@ export default class Index extends Component<IProps, IState>{
                     ) : (
                         <div className="hh-goal-todo">
                             <div className="hh-goal-todo-title">2013年5月19日</div>
-                            <div className="hh-goal-todo-wrapper">
-                                <div className="hh-goal-todo-item">
-                                    <div className="hh-radio"></div>我要打玩玩就按的
+                            <div className="hh-todo-lists">
+                                <div className="hh-todo-item">
+                                    我要打玩玩就按的
                                 </div>
-                                <div className="hh-goal-todo-item on">
-                                    <div className="hh-radio"></div>我要打玩玩就按的
+                                <div className="hh-todo-item on">
+                                    我要打玩玩就按的
                                 </div>
                             </div>
                         </div>

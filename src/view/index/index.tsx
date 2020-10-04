@@ -37,14 +37,16 @@ export default class Index extends Component<IProps, IState>{
     render(){
         return (
             <div className="hh-index">
-                <header>
-                <Link to="/my" className="hh-avatar" >
-                    <img src={avatarImg} alt="头像"/>
-                    呵呵杰
-                </Link>
-                <Link to="/message" className="hh-message" >
-                    <MessageOutlined />
-                </Link>
+                <header className="hh-header">
+                    <Link to="/my" className="hh-avatar" >
+                        <img src={avatarImg} alt="头像"/>
+                        呵呵杰
+                    </Link>
+                    <Badge count={5} offset={[-3,5]} className="hh-message" size="small">
+                        <Link to="/message" >
+                            <MessageOutlined />
+                        </Link>
+                    </Badge>
                 </header>
                 <section>
                     <Clock
@@ -64,7 +66,7 @@ export default class Index extends Component<IProps, IState>{
                 </section> */}
                 <section>
                     <Link to="/my/todo" className="hh-btn-add" >创建计划</Link>
-                    <Link to="/my/dare" className="hh-btn-add" >开始挑战</Link>
+                    <Link to="/user/dare" className="hh-btn-add" >开始挑战</Link>
                 </section>
             </div>  
         )

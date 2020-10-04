@@ -91,6 +91,18 @@ input[textarea]{
 ::-webkit-scrollbar{
   display: none;
 }
+.hh-header{
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #409EFF;
+  height: 10vh;
+  border-radius: 0 0 50% 50%;
+}
+
+
+// 按钮
 .hh-btn {
   display: block;
   position: relative;
@@ -128,6 +140,8 @@ input[textarea]{
     transform: translateX(250px) rotate(45deg);
     }
 }
+
+// grid布局
 ul.hh-groups{
   padding: 0;
   width: 100%;
@@ -147,6 +161,58 @@ ul.hh-groups{
 }
 a{
   color: #000;
+}
+
+// 任务列表
+.hh-todo-lists{
+  width: 100%;
+  .hh-todo-item{
+    position: relative;
+    margin-top: 5px;
+    padding-left: 25px;
+    text-align: left;
+    cursor: pointer;
+    &::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #409EFF;
+      text-align: center;
+      line-height: 20px;
+    }
+    &.on{
+        color: gray;
+        text-decoration: line-through;
+        &::before{
+            content: '🐶';
+            background-color:gray;
+            border-color:gray;
+            border-radius: 50%;
+        }
+    }
+  }
+}
+// 用户头像
+.hh-avatar{
+  .hh-avatar-gl{
+      width: 150px;
+      height: 150px;
+      border: 1px solid #feaaad;
+      margin: 10px auto;
+      img{
+          width: 100%;
+          height: 100%;
+      }
+  }
+  .hh-avatar-info{
+      text-align: center;
+      span{
+          margin-right: 10px;
+      }
+  }
 }
 @media screen and (max-width: 400px){
   .hh-box {
