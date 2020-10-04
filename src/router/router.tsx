@@ -30,14 +30,13 @@ import Todo from '../view/my/todo/index'
 
 import User from '../view/user/index'
 import Dare from '../view/user/dare/index'
-import Finish from '../view/user/finish/index'
 import UserInfo from '../view/user/userInfo/index'
 
 const router = (props: any) => (
     <Router>
         <div style={{width: '100%',height: 'calc(100% - 50px)',overflow: 'auto'}}>
             <Switch>
-                <Route exact path="/" render={() => <Redirect to="/user/dare" push />} />
+                {/* <Route path="/" render={() => <Redirect to="/login" push />} /> */}
                 <Route path="/login" component={Login}/>
                 <Route path="/index" component={Index}/>
                 <Route path="/message" component={Message}/>
@@ -46,7 +45,6 @@ const router = (props: any) => (
                         <Route path="/user/index" component={User} />
                         <Route path="/user/userInfo" component={UserInfo} />
                         <Route path="/user/dare" component={Dare} />
-                        <Route path="/user/finish" component={Finish} />
                         <Redirect to="/user/index" />
                     </Switch>
                 )}/>

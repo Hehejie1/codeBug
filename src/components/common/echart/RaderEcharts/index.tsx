@@ -45,7 +45,7 @@ const chartEmpty = {
     }]
 };
 
-export const RaderEcharts = ():React.ReactElement => {
+export const RaderEcharts = (props: any):React.ReactElement => {
     let [raderData, setRaderData] = useState(null);
     // 防护监控数据 实例
     let [chart1] = [null];
@@ -69,7 +69,7 @@ export const RaderEcharts = ():React.ReactElement => {
                 className="raderEcharts1"
                 option={raderData}
                 onRender={(e): void => {chart1 = e}}
-                style={{width: '100%', height: '400px'}}
+                {...props}
                 />
         </div>
     );

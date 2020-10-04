@@ -33,8 +33,6 @@ const Chart = (props: ChartProps): React.ReactElement => {
     // 生命钩子函数
     type Callback = () => void;
     React.useEffect((): Callback => {
-        console.log("useEffect");
-
         // 加载状态
         function showLoading(instance: any): void {
             instance.showLoading("default", {
