@@ -65,30 +65,10 @@
                 border: 1px solid #409EFF;
                 margin: 10px 0;
             }
-            .hh-goal-todo-wrapper{
+            .hh-todo-lists{
                 padding: 5px;
                 margin-left: 20px;
                 color: #000;
-                .hh-goal-todo-item{
-                    margin-top: 5px;
-                    cursor: pointer;
-                    &.on{
-                        color: gray;
-                        text-decoration: line-through;
-                        .hh-radio{
-                            background-color:gray;
-                            border-color:gray;
-                        }
-                    }
-                    .hh-radio{
-                        display: inline-block;
-                        width: 1vw;
-                        height: 1vw;
-                        margin-right: 5px;
-                        border: 1px solid #409EFF;
-                    }
-                }
-               
             }
             
         }

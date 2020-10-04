@@ -37,7 +37,7 @@ const router = (props: any) => (
     <Router>
         <div style={{width: '100%',height: 'calc(100% - 50px)',overflow: 'auto'}}>
             <Switch>
-                <Route exact path="/" render={() => <Redirect to="/my/okr" push />} />
+                <Route exact path="/" render={() => <Redirect to="/user/dare" push />} />
                 <Route path="/login" component={Login}/>
                 <Route path="/index" component={Index}/>
                 <Route path="/message" component={Message}/>
