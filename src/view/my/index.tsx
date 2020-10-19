@@ -46,9 +46,6 @@ export default class Index extends Component<IProps, IState>{
     render(){
         return (
             <div className="hh-my">
-                <section>
-                    <Link to="/index" className="hh-btn-item" ><CloseCircleOutlined className="f16" /></Link>
-                </section>
                 <section className="hh-avatar">
                     <div id="react-gl-avatar" className="hh-avatar-gl">
                         <img src={avatarImg} />
