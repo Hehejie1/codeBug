@@ -1,18 +1,23 @@
+// <reference path="../../types/all.d.ts">
 import React, {Component} from 'react';
 import "./index.scss"
 import { momment } from '../../utils/date'
 import avatarImg from '../../assert/images/user_one.jpg'
 import { MessageOutlined } from '@ant-design/icons';
-import Clock from "../../components/common/canvas/clock"
-import { Badge } from 'antd';
+import { MyClock } from "../../components/common/canvas/clock"
+import { Badge,Drawer } from 'antd';
 import { Link } from 'react-router-dom'
+import My from '../my/index'
+import Battery from '../../components/common/module/Battery/index'
+
 
 interface IProps{
 }
 
 interface IState{
     date: string,
-    timer: any
+    timer: any,
+    visible: boolean
 }
 
 export default class Index extends Component<IProps, IState>{
@@ -20,9 +25,9 @@ export default class Index extends Component<IProps, IState>{
         super(props);
         this.state = {
             date: '',
-            timer: null
+            timer: null,
+            visible: false
         }
-        console.log(this.props);
     }
     componentWillMount() {
         let _date = ''; 
@@ -34,20 +39,40 @@ export default class Index extends Component<IProps, IState>{
             })
         },1)
     }
+    showDrawer(){
+      this.setState({
+        visible: true
+      });
+    };
+    onClose(){
+        this.setState({
+            visible: false
+        });
+    };
     render(){
         return (
             <div className="hh-index">
                 <header>
-                <Link to="/my" className="hh-avatar" >
+                <div className="hh-avatar"  onClick={this.showDrawer.bind(this)}>
                     <img src={avatarImg} alt="头像"/>
                     呵呵杰
-                </Link>
+                </div>
+                <Drawer
+                    placement="left"
+                    closable={true}
+                    onClose={this.onClose.bind(this)}
+                    visible={this.state.visible}
+                >
+                    <My />
+                </Drawer>
                 <Link to="/message" className="hh-message" >
-                    <MessageOutlined />
+                    <Badge count={5} size="small">
+                        <MessageOutlined className="hh-icon" />
+                    </Badge>
                 </Link>
                 </header>
-                <section>
-                    <Clock
+                <section className="hh-clock-content">
+                    <MyClock
                         id="hh-index-clock"
                         className="hh-clock" 
                         style={{
@@ -57,7 +82,31 @@ export default class Index extends Component<IProps, IState>{
                             margin: "10px auto",
                         }} 
                     />
-                    <p style={{textAlign: "center"}}>距离死亡还有：{this.state.date}</p>
+                    <p style={{textAlign: "center",lineHeight:'24px'}}>
+                        你的余生大约还剩下 
+                        <span style={{verticalAlign:'middle',lineHeight:'18px',margin:'0 5px'}}>
+                            <Battery type='nogrid' percent={72} size={18} color={'#000'}></Battery>
+                        </span>
+                        72%
+                    </p>
+                    <div className="hh-last-time">
+                        <div>
+                            <div className="hh-last">13223553</div>
+                            <div>秒</div>
+                        </div>
+                        <div>
+                            <div className="hh-last">222222</div>
+                            <div>天</div>
+                        </div>
+                        <div>
+                            <div className="hh-last">1111</div>
+                            <div>月</div>
+                        </div>
+                        <div>
+                            <div className="hh-last">75</div>
+                            <div>年</div>
+                        </div>
+                    </div>
                 </section>
                 {/* <section>
                     用户完成任务的要求

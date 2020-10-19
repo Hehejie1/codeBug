@@ -11,7 +11,7 @@
             position: fixed;
             left: 15px;
             top: 5px;
-            overflow: hidden;
+            // overflow: hidden;
             color: #000;
             vertical-align: middle;
             font-size: 16px;
@@ -34,7 +34,6 @@
             color: #Fff;
         }
     }
-
     section{
         text-align: center;
         .hh-btn-add{
@@ -56,6 +55,17 @@
             padding: 5px 10px;
             font-size: 14px;
             border-radius: 4px;
+        }
+        &.hh-clock-content{
+            text-align: center;
+            .hh-last-time{
+                display: grid;
+                grid-template-columns: 31% 23% 23% 23%;
+                font-size: 12px;
+                .hh-last{
+                    color: gold;
+                }
+            }
         }
     }
 }
