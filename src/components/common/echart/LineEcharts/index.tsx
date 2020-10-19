@@ -64,7 +64,7 @@ const chartEmpty = {
     ]
 };
 
-export const LineEcharts = ():React.ReactElement => {
+export const LineEcharts = (props: any):React.ReactElement => {
     let [chart1Data, setChart1Data] = React.useState(null);
 
     // 防护监控数据 实例
@@ -89,7 +89,7 @@ export const LineEcharts = ():React.ReactElement => {
                 className="chart1"
                 option={chart1Data}
                 onRender={(e): void => {chart1 = e}}
-                style={{width: '100%', height: '400px'}}
+                {...props}
                 />
         </div>
     );

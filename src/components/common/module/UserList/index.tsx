@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Avatar, Button } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom'
 import './index.scss';
 
 export interface TabsProps {
@@ -38,7 +39,7 @@ const UserList = (props: TabsProps) => {
                 <p>星座： 天蝎座</p>
             </div>
             <div className="hh-list-btn">
-                <Button type="primary"> P K </Button>
+                <Link to="/user/userInfo"> P K </Link>
             </div>
         </div>
     ))

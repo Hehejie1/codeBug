@@ -1,49 +1,54 @@
-import React, {Component, ReactNode} from 'react';
+import React, { useState } from 'react';
 import { Drag } from "../../../components/index"
 import "./index.scss"
-
+import avatarImg from '../../../assert/images/user_one.jpg'
 interface IProps{
 
 }
-interface IState{
-    msg: string
-}
 
-const FirstChild: React.ReactNode = (
-    <>
-        <div>
-            个人头像
-        </div>
-        <div>
-            展开内容
-            <ul>
-                <li>我今天也要做什么</li>
-            </ul>
-        </div>
-    </>
-)
+export default (props: IProps) => {
+    const [myLists, setMyLists] = useState()
 
-const SecondChild: React.ReactNode = (
-    <>
-        <div>你好</div>
-    </>
-)
-
-
-
-
-export default class Index extends Component<IProps, IState>{
-    constructor(props: any){
-        super(props);
-        this.state = {
-            msg : '对战'
-        }
+    const handleClick = (index:number) => {
+        console.log(index)
     }
-    render(){
-        return (
-            <div className="hh-dare">
-                <Drag firstChild={FirstChild} secondChild={SecondChild} initSate={{x1:10,x2:200,y1:10,y2:10}}></Drag>
+
+    const FirstChild: React.ReactNode = (
+        <>
+            <div className="hh-dare-img">
+                <img src={avatarImg} alt="个人头像"/>
             </div>
-        )
-    }
+            <div className="hh-dare-list">
+                <ul className="hh-todo-lists">
+                    <li className="hh-todo-item" onClick={() => handleClick(1)}>我今天也要做什么</li>
+                </ul>
+            </div>
+        </>
+    )
+    const SecondChild: React.ReactNode = (
+        <>
+            <div className="hh-dare-img">
+                <img src={avatarImg} alt="个人头像"/>
+            </div>
+            <div className="hh-dare-list">
+                <ul className="hh-todo-lists">
+                    <li className="hh-todo-item">我今天也要做什么</li>
+                    <li className="hh-todo-item">我今天也要做什么</li>
+                    <li className="hh-todo-item">我今天也要做什么</li>
+                    <li className="hh-todo-item">我今天也要做什么</li>
+                </ul>
+            </div>
+        </>
+    )
+
+    return (
+        <div className="hh-dare">
+            <Drag 
+                firstChild={FirstChild} 
+                secondChild={SecondChild} 
+                initSate={{x1:10,x2:200,y1:10,y2:10}}
+                showLine={false}
+            ></Drag>
+        </div>
+    )
 }

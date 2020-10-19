@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './index.scss';
 
 export interface TabsProps {
@@ -16,9 +16,12 @@ export interface TabsState {
 const Tab = (props: TabsProps) => {
     const [hash, setHash] = useState('')
 
+    let location = useLocation()
+    
     useEffect(() => {
-        setHash(window.location.pathname)
-    }, [window.location.pathname])
+        // setHash(window.location.pathname)
+        setHash(location?.pathname);
+    }, [location])
 
     const handleClick = (key: string) => {
         // window.location.assign(key)

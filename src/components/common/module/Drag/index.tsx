@@ -5,12 +5,18 @@ import './index.scss';
 export interface DragProps {
     firstChild: React.ReactNode
     secondChild: React.ReactNode
-    initSate?: {
+    initSate: {
         x1: string | number
         x2: string | number
         y1: string | number
         y2: string | number
-    }
+    } | {
+        x1: 0
+        x2: 0
+        y1: 0
+        y2: 0
+    },
+    showLine?: boolean | true
 }
 const useDrag = (domRef: any, setPosition: any, parentRef: any, initSate?: any) => {
     const mouseStart = useRef({
@@ -82,7 +88,7 @@ const Drag = (props: DragProps) => {
     }, [startPosition, endPosition])
     return (
         <div ref={parentRef} className="hh-drag">
-            <svg className="hh-drag-line">
+            <svg className="hh-drag-line" style={{opacity: props.showLine ? 1 : 0}}>
                 <line
                     className="line"
                     x1={linePosition.x1}
@@ -91,8 +97,8 @@ const Drag = (props: DragProps) => {
                     y2={linePosition.y2}
                 ></line>
             </svg> 
-            <div ref={startRef} className="hh-drag-box">{props.firstChild}</div>
-            <div ref={endRef} className="hh-drag-box">{props.secondChild}</div>
+            <div ref={startRef} style={{left:props.initSate.x1,top:props.initSate.y1}} className="hh-drag-box">{props.firstChild}</div>
+            <div ref={endRef} style={{left:props.initSate.x2,top:props.initSate.y2}} className="hh-drag-box">{props.secondChild}</div>
         </div>
     )
 }

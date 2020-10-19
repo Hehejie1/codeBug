@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { Input, Drawer, Button } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
-import { UserList } from '../../components/index'
+import { UserList } from '../../components/index';
+import { Link } from 'react-router-dom';
 const { Search } = Input;
 import "./index.scss"
 

@@ -113,7 +113,7 @@ export default class Index extends Component<IProps, IState>{
                 </section> */}
                 <section>
                     <Link to="/my/todo" className="hh-btn-add" >创建计划</Link>
-                    <Link to="/my/dare" className="hh-btn-add" >开始挑战</Link>
+                    <Link to="/user/dare" className="hh-btn-add" >开始挑战</Link>
                 </section>
             </div>  
         )

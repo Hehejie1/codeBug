@@ -91,6 +91,18 @@ input[textarea]{
 ::-webkit-scrollbar{
   display: none;
 }
+.hh-header{
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #409EFF;
+  height: 10vh;
+  border-radius: 0 0 50% 50%;
+}
+
+
+// 按钮
 .hh-btn {
   display: block;
   position: relative;
@@ -128,6 +140,8 @@ input[textarea]{
     transform: translateX(250px) rotate(45deg);
     }
 }
+
+// grid布局
 ul.hh-groups{
   padding: 0;
   width: 100%;

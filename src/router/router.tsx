@@ -30,14 +30,15 @@ import Todo from '../view/my/todo/index'
 
 import User from '../view/user/index'
 import Dare from '../view/user/dare/index'
-import Finish from '../view/user/finish/index'
 import UserInfo from '../view/user/userInfo/index'
+import RouteInfo from '../mock/swagger'
 
 const router = (props: any) => (
     <Router>
         <div style={{width: '100%',height: 'calc(100% - 50px)',overflow: 'auto'}}>
             <Switch>
-                <Route exact path="/" render={() => <Redirect to="/user/dare" push />} />
+                {/* 如果想要二级路由就不能出现extct 如果不能出现extct就不能出现重定向 */}
+                {/* <Route path="/" render={() => <Redirect to="/login" push />} /> */}
                 <Route path="/login" component={Login}/>
                 <Route path="/index" component={Index}/>
                 <Route path="/message" component={Message}/>
@@ -46,7 +47,6 @@ const router = (props: any) => (
                         <Route path="/user/index" component={User} />
                         <Route path="/user/userInfo" component={UserInfo} />
                         <Route path="/user/dare" component={Dare} />
-                        <Route path="/user/finish" component={Finish} />
                         <Redirect to="/user/index" />
                     </Switch>
                 )}/>
@@ -61,6 +61,8 @@ const router = (props: any) => (
                     </Switch>
                 )}/>
                 <Route path="/404" component={Error}/>
+                <Route path="/route" component={RouteInfo}/>
+                <Route path="/" render={() => <Redirect to="/login" push />} />
                 <Route component={Error}/>
             </Switch>
         </div>
