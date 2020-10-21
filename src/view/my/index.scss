@@ -1,10 +1,14 @@
 .hh-my{
-    .hh-close{
-        position: absolute;
-        right: 10px;
-        top: 10px;
+    .hh-avatar{
+        text-align: center;
+        .hh-avatar-gl{
+            height: 150px;
+            img{
+                width: 150px;
+                height: 100%;
+            }
+        }
     }
-    
     .hh-options{
         padding: 0 10px;
         a{
