@@ -35,7 +35,7 @@ import RouteInfo from '../mock/swagger'
 
 const router = (props: any) => (
     <Router>
-        <div style={{width: '100%',height: 'calc(100% - 50px)',overflow: 'auto'}}>
+        <div style={{width: '100%',height: 'calc(100% - 50px)',overflow: 'auto',background:'#eee'}}>
             <Switch>
                 {/* 如果想要二级路由就不能出现extct 如果不能出现extct就不能出现重定向 */}
                 {/* <Route path="/" render={() => <Redirect to="/login" push />} /> */}

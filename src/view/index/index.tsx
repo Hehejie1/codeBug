@@ -53,23 +53,23 @@ export default class Index extends Component<IProps, IState>{
         return (
             <div className="hh-index">
                 <header>
-                <div className="hh-avatar"  onClick={this.showDrawer.bind(this)}>
-                    <img src={avatarImg} alt="头像"/>
-                    呵呵杰
-                </div>
-                <Drawer
-                    placement="left"
-                    closable={true}
-                    onClose={this.onClose.bind(this)}
-                    visible={this.state.visible}
-                >
-                    <My />
-                </Drawer>
-                <Link to="/message" className="hh-message" >
-                    <Badge count={5} size="small">
-                        <MessageOutlined className="hh-icon" />
-                    </Badge>
-                </Link>
+                    <div className="hh-avatar"  onClick={this.showDrawer.bind(this)}>
+                        <img src={avatarImg} alt="头像"/>
+                        呵呵杰
+                    </div>
+                    <Drawer
+                        placement="left"
+                        closable={true}
+                        onClose={this.onClose.bind(this)}
+                        visible={this.state.visible}
+                    >
+                        <My />
+                    </Drawer>
+                    <Link to="/message" className="hh-message" >
+                        <Badge count={5} size="small">
+                            <MessageOutlined className="hh-icon" />
+                        </Badge>
+                    </Link>
                 </header>
                 <section className="hh-clock-content">
                     <MyClock

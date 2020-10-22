@@ -1,6 +1,8 @@
 .hh-index{
     header{
-        min-height: 30px;
+        min-height: 10vh;
+        background-color: #409EFF;
+        border-radius: 0 0 50% 50%;
         .hh-avatar{
             position: fixed;
             left: 15px;
@@ -50,7 +52,7 @@
             transition: .1s;
             font-weight: 500;
             padding: 5px 10px;
-            font-size: 14px;
+            font-size: 16px;
             border-radius: 4px;
         }
         &.hh-clock-content{

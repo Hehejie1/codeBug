@@ -10,7 +10,7 @@ const layout = {
     wrapperCol: { span: 20 },
 };
 const tailLayout = {
-    wrapperCol: { offset: 8, span: 16 },
+    wrapperCol: { span: 16 },
 };
 
 interface IProps{
