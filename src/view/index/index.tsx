@@ -9,7 +9,7 @@ import { Badge,Drawer } from 'antd';
 import { Link } from 'react-router-dom'
 import My from '../my/index'
 import Battery from '../../components/common/module/Battery/index'
-
+import Tab from '../../components/common/module/Tab/index'
 
 interface IProps{
 }
@@ -115,6 +115,9 @@ export default class Index extends Component<IProps, IState>{
                     <Link to="/my/todo" className="hh-btn-add" >创建计划</Link>
                     <Link to="/user/dare" className="hh-btn-add" >开始挑战</Link>
                 </section>
+                <Tab 
+                    option={[{key:'/index',name:'首页'},{key:'/user/index',name:'空间'}]}
+                />
             </div>  
         )
     }

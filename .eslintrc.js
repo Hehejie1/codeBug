@@ -17,9 +17,14 @@ module.exports = {
         "ecmaVersion": 2020,
         "sourceType": "module"
     },
-    settings: {
+    "settings": {
         react: {
             version: "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+        },
+        "import/resolver": {
+            "node": {
+                "paths": ["src"]
+            }
         }
     },
     "plugins": [

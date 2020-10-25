@@ -5,6 +5,8 @@ import { UserList } from '../../components/index';
 import { Link } from 'react-router-dom';
 const { Search } = Input;
 import "./index.scss"
+import Tab from '../../components/common/module/Tab/index'
+
 
 interface IProps{
 
@@ -78,6 +80,9 @@ export default class User extends Component<IProps, IState>{
                 <section>
                     <UserList option={this.state.userList}></UserList>
                 </section>
+                <Tab 
+                    option={[{key:'/index',name:'首页'},{key:'/user/index',name:'空间'}]}
+                />
             </div>
         )
     }

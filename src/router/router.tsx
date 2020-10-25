@@ -1,8 +1,10 @@
 // eslint-disable-next-line
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
-import Tab from '../components/common/module/Tab/index'
-
+// import Tab from '../components/common/module/Tab/index'
+// <Tab 
+//     option={[{key:'/index',name:'首页'},{key:'/user/index',name:'空间'}]}
+// />
 // const Login = lazy(() => import('../view/login/index'))
 // const Index = lazy(() => import('../view/index/index'))
 // const Error = lazy(() => import('../view/error/index'))
@@ -35,7 +37,7 @@ import RouteInfo from '../mock/swagger'
 
 const router = (props: any) => (
     <Router>
-        <div style={{width: '100%',height: 'calc(100% - 50px)',overflow: 'auto',background:'#eee'}}>
+        <div style={{width: '100%',height: '100%',overflow: 'auto',background:'#eee'}}>
             <Switch>
                 {/* 如果想要二级路由就不能出现extct 如果不能出现extct就不能出现重定向 */}
                 {/* <Route path="/" render={() => <Redirect to="/login" push />} /> */}
@@ -66,9 +68,6 @@ const router = (props: any) => (
                 <Route component={Error}/>
             </Switch>
         </div>
-        <Tab 
-          option={[{key:'/index',name:'首页'},{key:'/user/index',name:'空间'}]}
-        />
     </Router>
 );
 
