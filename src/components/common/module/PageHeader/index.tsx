@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom'
+import React, { useState, useEffect, ReactNode } from 'react';
 import { PageHeader } from 'antd';
 import './index.scss';
 
 
 export interface TabsProps {
-    title?: string
-    subTitle?: string
+    title?: string | ReactNode
+    subTitle?: string | ReactNode
+    backIcon?: boolean | ReactNode
+    extra?: ReactNode   // 操作区，位于 title 行的行尾	
 }
  
 export interface TabsState {
@@ -17,11 +18,12 @@ const Header = (props: TabsProps) => {
 
     return (
         <PageHeader
-            className="site-page-header"
-            onBack={() => null}
+            className="hh-page-header"
+            onBack={() => window.history.back()}
             title={props?.title}
             subTitle={props?.subTitle}
-        />
+            extra={props.extra}
+        ></PageHeader>
     )
 }
  
