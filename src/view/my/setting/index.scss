@@ -1,5 +1,21 @@
 .hh-goal{
-    .hh-row{
-        text-align: left;
+    position: relative;
+    height: 100%;
+    ul.hh-groups{
+        li.hh-row{
+            text-align: left;
+            background-color: #fff;
+            color: #333;
+            margin-top: 8px;
+            padding: 10px;
+        }
+    }
+    footer{
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        text-align: center;
+        font-size: 12px;
+        width: 100%;
     }
 }

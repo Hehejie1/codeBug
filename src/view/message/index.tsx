@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { Collapse, Button } from 'antd';
+import Header from '../../components/common/module/PageHeader/index'
+import { CheckSquareOutlined } from '@ant-design/icons';
 
 const { Panel } = Collapse;
 import "./index.scss"
@@ -32,9 +34,10 @@ export default class Index extends Component<IProps, IState>{
     render(){
         return (
             <div className="hh-message">
-                <section className="hh-header">
-                    <Button type="primary">全部已读</Button>
-                </section>
+                <Header
+                    title="消息"
+                    extra={[<Button key="1" type="default" shape="circle" icon={<CheckSquareOutlined style={{color:'#333'}} />}></Button>]}
+                ></Header>
                 <section className="hh-message-container">
                     <Collapse onChange={this.callback}>
                         <Panel header="This is panel header 1" key="1">

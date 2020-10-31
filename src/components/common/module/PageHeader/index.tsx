@@ -15,7 +15,6 @@ export interface TabsState {
 }
  
 const Header = (props: TabsProps) => {
-
     return (
         <PageHeader
             className="hh-page-header"

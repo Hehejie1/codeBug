@@ -1,7 +1,7 @@
 .hh-okr{
     width: 100%;
     height: 100%;
-    background-color: #eee;
+    background-color: #F6F7F9;
     .hh-header{
         .hh-time{
             .hh-time-item{
@@ -18,14 +18,14 @@
             font-size: 12px;
             text-align: left;
             .hh-form-nav{
-                border-bottom: 1px solid #eee;
+                border-bottom: 1px solid #F6F7F9;
             }
             .hh-form-list{
                 
                 .hh-form-list-item{
                     display: grid;
                     grid-template-columns: 30px 1fr;
-                    border-bottom: 1px solid #eee;
+                    border-bottom: 1px solid #F6F7F9;
                     .hh-form-list-icon{
                         text-align: center;
                     }

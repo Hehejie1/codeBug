@@ -28,6 +28,7 @@ import My from '../view/my/index'
 import Goal from '../view/my/goal/index'
 import Okr from '../view/my/okr/index'
 import Setting from '../view/my/setting/index'
+import Help from '../view/my/help/index'
 import Todo from '../view/my/todo/index'
 
 import User from '../view/user/index'
@@ -37,7 +38,7 @@ import RouteInfo from '../mock/swagger'
 
 const router = (props: any) => (
     <Router>
-        <div style={{width: '100%',height: '100%',overflow: 'auto',background:'#eee'}}>
+        <div style={{width: '100%',height: '100%',overflow: 'auto',background:'#F6F7F9'}}>
             <Switch>
                 {/* 如果想要二级路由就不能出现extct 如果不能出现extct就不能出现重定向 */}
                 {/* <Route path="/" render={() => <Redirect to="/login" push />} /> */}
@@ -57,6 +58,7 @@ const router = (props: any) => (
                         <Route path="/my/index" component={My} />
                         <Route path="/my/goal" component={Goal} />
                         <Route path="/my/okr" component={Okr} />
+                        <Route path="/my/help" component={Help} />
                         <Route path="/my/setting" component={Setting} />
                         <Route path="/my/todo" component={Todo} />
                         <Redirect to="/my/index" />

@@ -67,7 +67,7 @@ export default class Index extends Component<IProps, IState>{
                             <Link to="/my/help" className="hh-btn-item" ><QuestionCircleOutlined className="icon" />帮助<RightOutlined className="fr" /></Link>
                         </li>
                         <li className="hh-row">
-                            <Link to="/my/login" className="hh-btn-item" ><ImportOutlined className="icon" />退出<RightOutlined className="fr" /></Link>
+                            <Link to="/login" className="hh-btn-item" ><ImportOutlined className="icon" />退出<RightOutlined className="fr" /></Link>
                         </li>
                     </ul>
                 </section>

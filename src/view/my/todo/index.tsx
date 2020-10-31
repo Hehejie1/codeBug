@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component, MouseEventHandler} from 'react';
 import { Button,Modal } from 'antd';
-import { CalendarOutlined, PlusCircleOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { CalendarOutlined, PlusCircleOutlined, ProfileTwoTone } from '@ant-design/icons';
 import Header from '../../../components/common/module/PageHeader/index'
 import "./index.scss"
 
@@ -38,7 +38,6 @@ export default class Index extends Component<IProps, IState>{
         }
         this.addClick = this.addClick.bind(this);
     }
-
     addClick(e: any){
         console.log(e);
         this.setState({
@@ -54,21 +53,21 @@ export default class Index extends Component<IProps, IState>{
         this.setState({
           visible: true,
         });
-      };
+    };
     
-      handleOk = (e: Event) => {
+    handleOk = (e: React.MouseEvent<HTMLElement>): void => {
         console.log(e);
         this.setState({
-          visible: false,
+            visible: false,
         });
-      };
+    };
     
-      handleCancel = (e: Event)  => {
+    handleCancel = (e: React.MouseEvent<HTMLElement>): void  => {
         console.log(e);
         this.setState({
-          visible: false,
+            visible: false,
         });
-      };
+    };
     render(){
         return (
             <div className="hh-todo">
@@ -76,7 +75,7 @@ export default class Index extends Component<IProps, IState>{
                     <div className="hh-todo-nav">
                         <Header
                             title="创建今日计划"
-                            extra={[<Button key="1" type="primary" shape="circle" icon={<CalendarOutlined />}></Button>]}
+                            extra={[<Button key="1" type="default" shape="circle" icon={<CalendarOutlined style={{color:'#333'}} />}></Button>]}
                         ></Header>
                     </div>
                     <p></p>
@@ -93,7 +92,7 @@ export default class Index extends Component<IProps, IState>{
                             return (
                                 <div className="hh-form-item hh-todo-item" key={item.id}>
                                     <input type="text" value={item.content} placeholder="请输入今天代办事项" />
-                                    <Button type="primary" shape="circle" icon={<InfoCircleOutlined />} />
+                                    <Button type="primary" onClick={this.showModal} shape="circle" icon={<ProfileTwoTone style={{fontSize: 18}} />} />
                                 </div>
                             )
                         })
@@ -105,36 +104,19 @@ export default class Index extends Component<IProps, IState>{
                         <Button className="hh-btn-finish" type="primary">创建完成</Button>
                     </div>
                 </div>
+                <Button type="primary" onClick={this.showModal}>
+                Open Modal
+                </Button>
                 <Modal
-                    title={
-                        <div
-                        style={{
-                            width: '100%',
-                            cursor: 'move',
-                        }}
-                        onMouseOver={() => {
-                            if (this.state.disabled) {
-                            this.setState({
-                                disabled: false,
-                            });
-                            }
-                        }}
-                        onMouseOut={() => {
-                            this.setState({
-                            disabled: true,
-                            });
-                        }}
-                        // fix eslintjsx-a11y/mouse-events-have-key-events
-                        // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/mouse-events-have-key-events.md
-                        onFocus={() => {}}
-                        onBlur={() => {}}
-                        // end
-                        >
-                        Draggable Modal
-                        </div>
-                    }
+                    title="Basic Modal"
                     visible={this.state.visible}
-                />
+                    onOk={this.handleOk}
+                    onCancel={this.handleCancel}
+                >
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Modal>
             </div>
         )
     }

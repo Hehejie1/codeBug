@@ -1,7 +1,10 @@
 .hh-user{
+  
     .hh-user-nav{
-        padding: 20px 0 10px;
+        padding: 2px 0 10px;
+        min-height: 10vh;
         background-color: #409EFF;
+        border-radius: 0 0 50% 50%;
         display: grid;
         grid-template-columns: 80% 20%;
         .hh-user-search{

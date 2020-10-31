@@ -55,9 +55,12 @@
                 width: 100%;
                 height: auto;
                 border: none;
-                border-bottom: 1px solid #eee;
+                border-bottom: 1px solid #F6F7F9;
                 color: #333;
                 padding: 0 8px;
+                &:focus{
+                    border: none;
+                }
             }
             .hh-textarea{
                 width: 100%;
