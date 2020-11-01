@@ -54,13 +54,13 @@ const Index = (props: IProps) => {
                 placement='bottom'
                 closable={false}
                 onClose={onClose}
+                getContainer={false}
                 visible={visible}
                 >
                 <p>Some contents...</p>
                 <p>Some contents...</p>
                 <p>Some contents...</p>
             </Drawer>  
-    
         </div>
     )
 }

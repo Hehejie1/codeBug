@@ -57,14 +57,6 @@ export default class Index extends Component<IProps, IState>{
                         <img src={avatarImg} alt="头像"/>
                         呵呵杰
                     </div>
-                    <Drawer
-                        placement="left"
-                        closable={true}
-                        onClose={this.onClose.bind(this)}
-                        visible={this.state.visible}
-                    >
-                        <My />
-                    </Drawer>
                     <Link to="/message" className="hh-message" >
                         <Badge count={5} size="small">
                             <MessageOutlined className="hh-icon" />
@@ -115,6 +107,15 @@ export default class Index extends Component<IProps, IState>{
                     <Link to="/my/todo" className="hh-btn-add" >创建计划</Link>
                     <Link to="/user/dare" className="hh-btn-add" >开始挑战</Link>
                 </section>
+                <Drawer
+                    placement="left"
+                    closable={true}
+                    getContainer={false}
+                    onClose={this.onClose.bind(this)}
+                    visible={this.state.visible}
+                >
+                    <My />
+                </Drawer>
                 <Tab 
                     option={[{key:'/index',name:'首页'},{key:'/user/index',name:'空间'}]}
                 />
